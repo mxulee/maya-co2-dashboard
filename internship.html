@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MAYA-CO2 LCC Dashboard</title>
+    <title>MAYA-CO2 LCC Dashboard - Bauhaus Edition</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -35,23 +35,22 @@
             color: var(--bh-black);
             padding: 40px 20px;
             display: flex;
-            justify-content: center;
+            flex-direction: column;
+            align-items: center;
         }
 
-        /* Dashboard Container - Stark and Geometric */
+        /* Dashboard Container */
         .dashboard-container {
             background-color: var(--bh-white);
             border: var(--border-width) solid var(--bh-black);
             box-shadow: 12px 12px 0px var(--bh-black);
             width: 100%;
             max-width: 1250px;
-            padding: 0; 
             display: grid;
             grid-template-columns: 380px 1fr;
             position: relative;
         }
 
-        /* Typography */
         h1, h2, h3, h4 {
             font-weight: 800;
             text-transform: uppercase;
@@ -59,11 +58,7 @@
             color: var(--bh-black);
         }
 
-        h1 {
-            font-size: 32px;
-            line-height: 1.1;
-            margin-bottom: 5px;
-        }
+        h1 { font-size: 32px; line-height: 1.1; margin-bottom: 5px; }
 
         .subtitle {
             font-weight: 600;
@@ -75,37 +70,14 @@
             padding: 4px 8px;
         }
 
-        /* Left Panel: Controls */
+        /* Sidebar: Controls */
         .controls-section {
             background: var(--bh-white);
             padding: 40px 30px;
             border-right: var(--border-width) solid var(--bh-black);
-            position: relative;
         }
 
-        /* Geometric accent block */
-        .controls-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 15px;
-            background: var(--bh-red);
-            border-bottom: var(--border-width) solid var(--bh-black);
-        }
-
-        .controls-section h3 {
-            margin-bottom: 25px;
-            font-size: 22px;
-            border-bottom: var(--border-width) solid var(--bh-black);
-            padding-bottom: 5px;
-        }
-
-        /* Sliders */
-        .control-group {
-            margin-bottom: 30px;
-        }
+        .control-group { margin-bottom: 30px; }
 
         .control-header {
             display: flex;
@@ -114,10 +86,7 @@
             margin-bottom: 10px;
         }
 
-        .control-label {
-            font-weight: 700;
-            font-size: 15px;
-        }
+        .control-label { font-weight: 700; font-size: 15px; }
 
         .control-value {
             background: var(--bh-black);
@@ -127,73 +96,28 @@
             font-weight: 700;
             min-width: 80px;
             text-align: center;
-            border: 2px solid var(--bh-black);
         }
 
-        /* Subsidy Value Special Styling */
-        .subsidy-val {
-            background: var(--bh-white);
-            color: var(--bh-black);
-        }
+        .subsidy-val { background: var(--bh-white); color: var(--bh-black); border: 2px solid var(--bh-black); }
 
-        /* Stark Slider Styling */
-        input[type=range] {
-            -webkit-appearance: none;
-            width: 100%;
-            background: transparent;
-        }
-
+        /* Sliders */
+        input[type=range] { -webkit-appearance: none; width: 100%; background: transparent; }
         input[type=range]::-webkit-slider-thumb {
             -webkit-appearance: none;
-            height: 24px;
-            width: 16px;
+            height: 24px; width: 16px;
             background: var(--bh-red);
             border: 3px solid var(--bh-black);
-            cursor: pointer;
-            margin-top: -10px;
+            cursor: pointer; margin-top: -10px;
         }
-        
-        #slider-subsidy::-webkit-slider-thumb {
-            background: var(--bh-white);
-        }
+        #slider-subsidy::-webkit-slider-thumb { background: var(--bh-white); }
+        input[type=range]::-webkit-slider-runnable-track { width: 100%; height: 6px; background: var(--bh-black); }
 
-        input[type=range]::-webkit-slider-runnable-track {
-            width: 100%;
-            height: 6px;
-            cursor: pointer;
-            background: var(--bh-black);
-        }
+        .slider-desc { font-size: 13px; font-weight: 600; margin-top: 8px; line-height: 1.3; }
 
-        .slider-desc {
-            font-size: 13px;
-            font-weight: 600;
-            margin-top: 8px;
-            line-height: 1.3;
-        }
-
-        /* Right Panel: Chart */
-        .chart-section {
-            padding: 40px;
-            display: flex;
-            flex-direction: column;
-            background-color: var(--bh-white);
-            position: relative;
-        }
-        
-        .chart-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 15px;
-            background: var(--bh-blue);
-            border-bottom: var(--border-width) solid var(--bh-black);
-        }
+        /* Right Panel: Charts */
+        .chart-section { padding: 40px; background-color: var(--bh-white); }
 
         .chart-container {
-            flex-grow: 1;
-            position: relative;
             min-height: 300px;
             margin-top: 20px;
             border: var(--border-width) solid var(--bh-black);
@@ -203,7 +127,6 @@
         }
         
         .breakdown-container {
-            position: relative;
             min-height: 120px;
             margin-top: 20px;
             border: var(--border-width) solid var(--bh-black);
@@ -213,11 +136,7 @@
         }
 
         /* Summary Cards */
-        .summary-cards {
-            display: flex;
-            gap: 20px;
-            margin-top: 30px;
-        }
+        .summary-cards { display: flex; gap: 20px; margin-top: 30px; }
 
         .card {
             flex: 1;
@@ -226,64 +145,43 @@
             padding: 15px;
             text-align: center;
             box-shadow: 8px 8px 0px var(--bh-black);
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
         }
 
         .card h4 {
-            font-size: 14px;
-            margin-bottom: 10px;
-            background: var(--bh-black);
-            color: var(--bh-white);
-            padding: 5px;
+            font-size: 14px; margin-bottom: 10px;
+            background: var(--bh-black); color: var(--bh-white); padding: 5px;
         }
 
-        .card .card-value {
-            font-size: 36px;
-            font-weight: 800;
-            color: var(--bh-black);
-        }
+        .card-value { font-size: 36px; font-weight: 800; color: var(--bh-black); }
 
-        /* Note Box */
         .note-box {
+            margin-top: 30px; padding: 15px;
+            background: var(--bh-yellow); border: var(--border-width) solid var(--bh-black);
+            font-size: 13px; font-weight: 700; box-shadow: 4px 4px 0px var(--bh-black);
+        }
+
+        /* FOOTER STYLE */
+        .footer {
+            width: 100%;
+            max-width: 1250px;
             margin-top: 30px;
-            padding: 15px;
-            background: var(--bh-yellow);
+            padding: 20px;
+            background-color: var(--bh-black);
+            color: var(--bh-white);
+            text-align: center;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 14px;
             border: var(--border-width) solid var(--bh-black);
-            font-size: 13px;
-            font-weight: 700;
-            line-height: 1.4;
-            box-shadow: 4px 4px 0px var(--bh-black);
+            box-shadow: 8px 8px 0px var(--bh-red);
         }
 
         @media (max-width: 900px) {
-            .dashboard-container {
-                grid-template-columns: 1fr;
-            }
-            .controls-section {
-                border-right: none;
-                border-bottom: var(--border-width) solid var(--bh-black);
-            }
-            .summary-cards {
-                flex-direction: column;
-            }
+            .dashboard-container { grid-template-columns: 1fr; }
+            .controls-section { border-right: none; border-bottom: var(--border-width) solid var(--bh-black); }
+            .summary-cards { flex-direction: column; }
         }
-        .footer {
-    width: 100%;
-    max-width: 1250px;
-    margin-top: 30px;
-    padding: 20px;
-    background-color: var(--bh-black);
-    color: var(--bh-white);
-    text-align: center;
-    font-weight: 800;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-size: 14px;
-    border: var(--border-width) solid var(--bh-black);
-    box-shadow: 8px 8px 0px var(--bh-red); /* Bauhaus accent shadow */
-}
     </style>
 </head>
 <body>
@@ -331,19 +229,19 @@
                     <span class="control-value subsidy-val" id="val-subsidy">-50 MXN</span>
                 </div>
                 <input type="range" id="slider-subsidy" min="0" max="200" value="50" step="5">
-                <p class="slider-desc">Subsidy applied per m² via monetized biogenic carbon storage credits.</p>
+                <p class="slider-desc">Subsidy applied via monetized carbon credits.</p>
             </div>
 
             <div class="note-box">
                 BASE MATERIALS FIXED AT 100 MXN.<br>
-                <span style="font-weight: 400;">This covers the structural clay/binders required to stabilize the raw Sargassum.</span>
+                <span style="font-weight: 400; text-transform: none;">Structural clay/binders for biomass stability.</span>
             </div>
         </div>
 
         <div class="chart-section">
             <div>
                 <h2>Market Benchmarking (MXN/m²)</h2>
-                <p style="font-weight: 600; margin-top: 5px;">Comparing MAYA-CO2 Net Cost against Mexican static incumbents.</p>
+                <p style="font-weight: 600; margin-top: 5px;">Comparing Net Cost against incumbents.</p>
             </div>
 
             <div class="chart-container">
@@ -355,254 +253,124 @@
             </div>
 
             <div class="summary-cards">
-                <div class="card" style="background-color: var(--bh-white);">
-                    <h4 style="background-color: var(--bh-black); color: var(--bh-white); border-bottom: 4px solid var(--bh-black);">GROSS COST</h4>
+                <div class="card">
+                    <h4>GROSS COST</h4>
                     <div class="card-value" id="card-gross">750</div>
                 </div>
                 <div class="card" style="background-color: var(--bh-yellow);">
-                    <h4 style="background-color: var(--bh-black); color: var(--bh-white); border-bottom: 4px solid var(--bh-black);">OFFSET SUBSIDY</h4>
-                    <div class="card-value" id="card-sub" style="color: var(--bh-black);">-50</div>
+                    <h4>SUBSIDY</h4>
+                    <div class="card-value" id="card-sub">-50</div>
                 </div>
                 <div class="card" style="background-color: var(--bh-red);">
-                    <h4 style="background-color: var(--bh-white); color: var(--bh-black); border-bottom: 4px solid var(--bh-black);">NET PRICE (MOF)</h4>
+                    <h4 style="background-color: var(--bh-white); color: var(--bh-black);">NET PRICE</h4>
                     <div class="card-value" id="card-net" style="color: var(--bh-white);">700</div>
                 </div>
             </div>
         </div>
 
     </div>
+
     <div class="footer">
-    SOURADEEPA NASKAR &copy; 2026 | souradeepa.naskar@mailbox.tu-dresden.de
-</div>
+        SOURADEEPA NASKAR &copy; 2026 | souradeepa.naskar@mailbox.tu-dresden.de
+    </div>
 
     <script>
-        // 1. Initial Data & Constants
         const BASE_MATERIAL_COST = 100;
         const CINDER_BLOCK_BASELINE = 250;
         const AAC_PREMIUM_CEILING = 850;
 
-        // DOM Elements for Values
         const valLabor = document.getElementById('val-labor');
         const valEnergy = document.getElementById('val-energy');
         const valMof = document.getElementById('val-mof');
         const valSubsidy = document.getElementById('val-subsidy');
-        
         const cardGross = document.getElementById('card-gross');
         const cardSub = document.getElementById('card-sub');
         const cardNet = document.getElementById('card-net');
 
-        // Sliders
         const sliderLabor = document.getElementById('slider-labor');
         const sliderEnergy = document.getElementById('slider-energy');
         const sliderMof = document.getElementById('slider-mof');
         const sliderSubsidy = document.getElementById('slider-subsidy');
 
-        // Bauhaus defaults
         Chart.defaults.font.family = 'Jost';
         Chart.defaults.color = '#1A1A1A';
 
-        // 2. Main Comparative Chart Setup
+        // Main Chart
         const ctxMain = document.getElementById('lccChart').getContext('2d');
-        
-        const marketCeilingLinePlugin = {
-            id: 'marketCeilingLine',
-            beforeDraw: (chart) => {
-                const { ctx, chartArea: { top, bottom }, scales: { x } } = chart;
-                const xPos = x.getPixelForValue(AAC_PREMIUM_CEILING);
-                
-                ctx.save();
-                ctx.beginPath();
-                ctx.lineWidth = 4;
-                ctx.strokeStyle = '#1A1A1A';
-                ctx.setLineDash([10, 10]);
-                ctx.moveTo(xPos, top);
-                ctx.lineTo(xPos, bottom);
-                ctx.stroke();
-                ctx.restore();
-
-                ctx.fillStyle = '#1A1A1A';
-                ctx.font = 'bold 14px Jost';
-                ctx.textAlign = 'center';
-                ctx.fillText('MARKET CEILING (850)', xPos, top - 10);
-            }
-        };
-
         const lccChart = new Chart(ctxMain, {
             type: 'bar',
             data: {
-                labels: [
-                    'CINDER BLOCK (BASE)', 
-                    'BASIC BIO-BRICK', 
-                    'NET MOF-BRICK', 
-                    'AAC (CEILING)'
-                ],
+                labels: ['CINDER BLOCK', 'BASIC BIO-BRICK', 'NET MOF-BRICK', 'AAC (CEILING)'],
                 datasets: [{
-                    label: 'Cost (MXN/m²)',
                     data: [CINDER_BLOCK_BASELINE, 480, 700, AAC_PREMIUM_CEILING],
-                    backgroundColor: [
-                        '#1A1A1A', // Black
-                        '#0F5298', // Bauhaus Blue
-                        '#D12D21', // Bauhaus Red
-                        '#1A1A1A'  // Black
-                    ],
-                    borderColor: '#1A1A1A',
-                    borderWidth: 4,
-                    barThickness: 40
+                    backgroundColor: ['#1A1A1A', '#0F5298', '#D12D21', '#1A1A1A'],
+                    borderColor: '#1A1A1A', borderWidth: 4, barThickness: 40
                 }]
             },
             options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: false,
-                layout: { padding: { top: 30 } },
+                indexAxis: 'y', responsive: true, maintainAspectRatio: false,
                 scales: {
-                    x: {
-                        beginAtZero: true,
-                        max: 1000,
-                        grid: { color: '#1A1A1A', lineWidth: 1, drawBorder: true },
-                        ticks: { font: { weight: 'bold', size: 14 } }
-                    },
-                    y: {
-                        grid: { display: false },
-                        ticks: { font: { size: 13, weight: 'bold' }, color: '#1A1A1A' }
-                    }
+                    x: { beginAtZero: true, max: 1000, grid: { color: '#1A1A1A' } },
+                    y: { grid: { display: false }, ticks: { font: { weight: 'bold' } } }
                 },
-                plugins: {
-                    legend: { display: false },
-                    tooltip: {
-                        backgroundColor: '#1A1A1A',
-                        titleFont: { size: 14 },
-                        bodyFont: { size: 16, weight: 'bold' },
-                        padding: 12,
-                        cornerRadius: 0,
-                        callbacks: {
-                            label: function(context) { return context.raw + ' MXN'; }
-                        }
-                    }
-                }
-            },
-            plugins: [marketCeilingLinePlugin]
+                plugins: { legend: { display: false } }
+            }
         });
 
-        // 3. Breakdown Stacked Chart Setup
+        // Breakdown Chart
         const ctxBreakdown = document.getElementById('breakdownChart').getContext('2d');
         const breakdownChart = new Chart(ctxBreakdown, {
             type: 'bar',
             data: {
                 labels: ['GROSS BUILDUP'],
                 datasets: [
-                    {
-                        label: 'Base (100)',
-                        data: [BASE_MATERIAL_COST],
-                        backgroundColor: '#F4F0E6',
-                        borderColor: '#1A1A1A',
-                        borderWidth: 4
-                    },
-                    {
-                        label: 'Labor',
-                        data: [200],
-                        backgroundColor: '#ECA313', // Yellow
-                        borderColor: '#1A1A1A',
-                        borderWidth: 4
-                    },
-                    {
-                        label: 'Energy',
-                        data: [180],
-                        backgroundColor: '#0F5298', // Blue
-                        borderColor: '#1A1A1A',
-                        borderWidth: 4
-                    },
-                    {
-                        label: 'MOF Tech',
-                        data: [270],
-                        backgroundColor: '#D12D21', // Red
-                        borderColor: '#1A1A1A',
-                        borderWidth: 4
-                    }
+                    { label: 'Base', data: [100], backgroundColor: '#F4F0E6', borderColor: '#1A1A1A', borderWidth: 4 },
+                    { label: 'Labor', data: [200], backgroundColor: '#ECA313', borderColor: '#1A1A1A', borderWidth: 4 },
+                    { label: 'Energy', data: [180], backgroundColor: '#0F5298', borderColor: '#1A1A1A', borderWidth: 4 },
+                    { label: 'MOF', data: [270], backgroundColor: '#D12D21', borderColor: '#1A1A1A', borderWidth: 4 }
                 ]
             },
             options: {
-                indexAxis: 'y',
-                responsive: true,
-                maintainAspectRatio: false,
+                indexAxis: 'y', responsive: true, maintainAspectRatio: false,
                 scales: {
-                    x: {
-                        stacked: true,
-                        display: false, // Hide axis for clean look
-                        max: 1200
-                    },
-                    y: {
-                        stacked: true,
-                        grid: { display: false },
-                        ticks: { font: { size: 14, weight: 'bold' } }
-                    }
+                    x: { stacked: true, display: false, max: 1200 },
+                    y: { stacked: true, display: false }
                 },
-                plugins: {
-                    legend: { 
-                        position: 'top',
-                        labels: { font: { weight: 'bold', size: 12 }, boxWidth: 15, boxHeight: 15 }
-                    },
-                    tooltip: {
-                        backgroundColor: '#1A1A1A',
-                        cornerRadius: 0
-                    }
-                }
+                plugins: { legend: { position: 'top' } }
             }
         });
 
-        // 4. Update Logic
-        function updateCalculations() {
-            // Get slider values
+        function update() {
             const labor = parseInt(sliderLabor.value);
             const energy = parseInt(sliderEnergy.value);
             const mof = parseInt(sliderMof.value);
             const subsidy = parseInt(sliderSubsidy.value);
 
-            // Update UI text labels
             valLabor.textContent = labor + ' MXN';
             valEnergy.textContent = energy + ' MXN';
             valMof.textContent = mof + ' MXN';
             valSubsidy.textContent = '-' + subsidy + ' MXN';
 
-            // Core Calculations
-            const basicCost = BASE_MATERIAL_COST + labor + energy;
-            const grossCost = basicCost + mof;
-            const netCost = grossCost - subsidy;
+            const basic = BASE_MATERIAL_COST + labor + energy;
+            const gross = basic + mof;
+            const net = gross - subsidy;
 
-            // Update Summary Cards
-            cardGross.textContent = grossCost;
+            cardGross.textContent = gross;
             cardSub.textContent = '-' + subsidy;
-            cardNet.textContent = netCost;
+            cardNet.textContent = net;
 
-            // Warn if Net Cost exceeds ceiling
-            const netCardEl = cardNet.parentElement;
-            if (netCost > AAC_PREMIUM_CEILING) {
-                netCardEl.style.backgroundColor = '#1A1A1A'; // Black if unviable
-            } else {
-                netCardEl.style.backgroundColor = '#D12D21'; // Red if viable
-            }
-
-            // Update Main Chart Data (Bar 1 is Basic, Bar 2 is Net)
-            lccChart.data.datasets[0].data[1] = basicCost; 
-            lccChart.data.datasets[0].data[2] = netCost;   
+            lccChart.data.datasets[0].data[1] = basic;
+            lccChart.data.datasets[0].data[2] = net;
             lccChart.update();
 
-            // Update Breakdown Chart Data
             breakdownChart.data.datasets[1].data[0] = labor;
             breakdownChart.data.datasets[2].data[0] = energy;
             breakdownChart.data.datasets[3].data[0] = mof;
             breakdownChart.update();
         }
 
-        // 5. Event Listeners
-        sliderLabor.addEventListener('input', updateCalculations);
-        sliderEnergy.addEventListener('input', updateCalculations);
-        sliderMof.addEventListener('input', updateCalculations);
-        sliderSubsidy.addEventListener('input', updateCalculations);
-
-        // Initial run
-        updateCalculations();
-
+        [sliderLabor, sliderEnergy, sliderMof, sliderSubsidy].forEach(s => s.addEventListener('input', update));
+        update();
     </script>
 </body>
 </html>
